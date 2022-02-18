@@ -37,8 +37,6 @@ const MORSE_TABLE = {
     '-----':  '0',
 };
 
-// const expression = "00101010100000000010001011101000101110100000111111**********00001011110000111111000010111000101110100000111010";
-
 function decode(expr) {
     // write your solution here
     let chars = expr.match(/.{1,10}/g);
@@ -49,11 +47,9 @@ function decode(expr) {
         chars[i] = chars[i].replace(/\*\*\*\*\*\*\*\*\*\*/g, ' ');
         chars[i] === ' ' ? null : chars[i] = MORSE_TABLE[chars[i]];
     }
-    // console.log(chars.join(''));
     return chars.join('');
 }
 
-// decode(expression);
 module.exports = {
     decode
 }
