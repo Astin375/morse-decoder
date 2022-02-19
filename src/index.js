@@ -40,11 +40,8 @@ const MORSE_TABLE = {
 function decode(expr) {
     // write your solution here
 return expr.match(/.{1,10}/g).map((el) => {
-        el =  el.replace(/00/g, '')
-                .replace(/10/g, '.')
-                .replace(/11/g, '-');
-        el === '**********' ? el = ' ' : el = MORSE_TABLE[el];
-        return el;
+        el =  el.replace(/00/g, '').replace(/10/g, '.').replace(/11/g, '-');
+        return el === '**********' ? ' ' : MORSE_TABLE[el];
     }).join('');
 }
 
